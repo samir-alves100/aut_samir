@@ -14,8 +14,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install Packeges
         run: |
-          sudo apt update - y
-          sudo pat-get install figlet - y 
+          sudo apt update -y
+          sudo pat-get install figlet -y 
           curl https://static.snyk.io/cli/latest/snyk-linux -o snyk
           chmod +x ./snyk
           mv ./snyk /usr/local/bin/
