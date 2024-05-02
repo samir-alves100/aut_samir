@@ -78,7 +78,12 @@ jobs:
           COMMIT_SHA=$(echo $GITHUB_SHA | cut -c 1-5)
           echo $COMMIT_SHA
 
+<<<<<<< HEAD
           docker tag apicontainer:latest <substituir_aqui>/apicontainer:$COMMIT_SHA
           docker push <substituir_aqui>/apicontainer:$COMMIT_SHA
+=======
+          docker tag apicontainer:latest samiralves100/apicontainer:$COMMIT_SHA
+          docker push samiralves100/apicontainer:$COMMIT_SHA
+>>>>>>> a0328df48374b6af329d734281dc709e17eb887b
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
