@@ -50,7 +50,7 @@ jobs:
         with: 
           aws-region: us-east-1
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secrets-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
 
       - name: DockerLint (CI)
@@ -95,4 +95,4 @@ jobs:
         run: |
           COMMIT_SHA=$(echo $GITHUBSHA | cut -c 1-5 )
           terraform init
-          terraform apply -va="github_sha=$COMMIT_SHA" --auto-approve
+          terraform apply -var="github_sha=$COMMIT_SHA" --auto-approve
